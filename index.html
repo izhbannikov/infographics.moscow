@@ -1,3 +1,38 @@
+<script type="text/javascript">
+all_images = new Array (
+"media/DataMining.jpg",
+"media/PlotEmission.png",
+"media/Software-Development-Services.jpg");
+var ImgNum = 0;
+var ImgLength = all_images.length - 1;
+var delay = 2500;
+var lock = false;
+var run;
+
+function chgImg(direction) {
+ if (document.images) {
+  ImgNum = ImgNum + direction;
+  if (ImgNum > ImgLength) { ImgNum = 0; }
+  if (ImgNum < 0) { ImgNum = ImgLength; }
+  document.slide_show.src = all_images[ImgNum];
+ }
+}
+
+function auto() {
+ if (lock == true) {
+  lock = false;
+  window.clearInterval(run);
+ }
+ else if (lock == false) {
+  lock = true;
+  run = setInterval("chgImg(1)", delay);
+ }
+}
+</script>
+
+<script type="text/javascript">
+ auto();
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +62,6 @@
   	<div class="navbar">
       <div class="navbar-inner">
         <div class="container-narrow">
-          <!--<a class="brand" href="http://izhbannikov.github.io/infographics.moscow">Infographics.Moscow</a>-->
           <a href="http://izhbannikov.github.io/infographics.moscow"><img src="media/Logo_large.png" alt="Company logo" width=300 height=200  align = "left" style="opacity:0.4;"></a>
           <ul class="nav" align="right">
               <li><a href="http://izhbannikov.github.io/infographics.moscow/">Home</a></li>
@@ -47,8 +81,23 @@
   <div class="span12">
     <!--<p><img src="media/16S-2.png" alt="16S rRNA" width="50%" height="50%" /></p>-->
 
+<div align="center">
+ <table border="0">
+  <tr align="center">
+   <td colspan="3"><img src="media/DataMining.jpg" name="slide_show" width=400 height=400></td>
+   <tr align="center">
+   	<td align="left"><a href="javascript:chgImg(-1)" style="font-size:14;">Data mining</a></td>
+   	<td align="center"><a href="javascript:auto()" style="font-size:14;">Statistical analysis</a></td>
+   	<td align="right"><a href="javascript:chgImg(1)" style="font-size:14;">Software development</a></td>
+  </tr>
+  </tr>
+ </table>
+</div>
+
+
+
 <h4>About us</h4>
-<p>Infographics.Moscow offers wide range of data processing services: data and text mining, analytics, statistical analysis.</p>
+<p>Infographics.Moscow offers a wide range of data processing services: Data and Text Mining, Analytics, Statistical Analysis, Consulting and Custom Software Development.</p>
 
 <h4 id="contact">Contact</h4>
 
