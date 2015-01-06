@@ -1,13 +1,14 @@
 <script type="text/javascript">
-all_images = new Array (
-"media/DataMining.jpg",
-"media/PlotEmission.png",
-"media/Software-Development-Services.jpg");
-var ImgNum = 0;
-var ImgLength = all_images.length - 1;
-var delay = 2500;
-var lock = false;
-var run;
+	all_images = new Array (
+		"media/Drugs_world.png",
+		"media/DataMining.jpg",
+		"media/PlotEmission.png",
+		"media/Software-Development-Services.jpg");
+	var ImgNum = 0;
+	var ImgLength = all_images.length - 1;
+	var delay = 2500;
+	var lock = false;
+	var run;
 
 function chgImg(direction) {
  if (document.images) {
@@ -79,15 +80,15 @@ function auto() {
         
 <div class="row-fluid">
   <div class="span12">
-    <!--<p><img src="media/16S-2.png" alt="16S rRNA" width="50%" height="50%" /></p>-->
 
 <div align="center">
  <table border="0">
   <tr align="center">
-   <td colspan="3"><img src="media/DataMining.jpg" name="slide_show" width=400 height=400></td>
+   <td colspan="4"><img src="media/Drugs_world.png" name="slide_show" width=400 height=400 border=400></td>
    <tr align="center">
+   <td align="left"><a href="javascript:chgImg(-1)" style="font-size:14;">Infographics</a></td>
    	<td align="left"><a href="javascript:chgImg(-1)" style="font-size:14;">Data mining</a></td>
-   	<td align="center"><a href="javascript:auto()" style="font-size:14;">Statistical analysis</a></td>
+   	<td align="center"><a href="javascript:auto()" style="font-size:14;">Analytics</a></td>
    	<td align="right"><a href="javascript:chgImg(1)" style="font-size:14;">Software development</a></td>
   </tr>
   </tr>
